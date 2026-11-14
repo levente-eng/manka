@@ -247,7 +247,22 @@
       .footer-links { gap:12px }
     }
     @media (prefers-reduced-motion:reduce) { *, *::before,*::after { scroll-behavior:auto !important; transition:none !important; animation:none !important } }
-  </style>
+  
+    .photo-stories { background: #faf9f3; }
+    .photo-stories-grid { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:20px; }
+    .photo-story { margin:0; position:relative; overflow:hidden; height:355px; background:#e7eee3; border-radius:24px; box-shadow:0 14px 35px rgba(44,70,56,.065); }
+    .photo-story img { width:100%; height:100%; object-fit:cover; object-position:center 38%; transition:transform .35s ease; }
+    .photo-story:nth-child(2) img { object-position:center 30%; }
+    .photo-story:hover img { transform:scale(1.035); }
+    .photo-story figcaption { position:absolute; left:13px; right:13px; bottom:13px; padding:14px 17px; border-radius:14px; background:rgba(255,253,250,.94); color:#24493a; font-size:12px; font-weight:800; box-shadow:0 5px 16px rgba(0,0,0,.06); }
+    .photo-stories-action { margin-top:28px; text-align:center; }
+    .photo-stories-action a { display:inline-block; padding:10px 0; color:var(--green); font-size:13px; font-weight:800; text-decoration:underline; text-underline-offset:5px; }
+    .hero-photo { object-position:center center; }
+    .about-photo img { object-position:center 38%; }
+    @media(max-width:820px) { .photo-stories-grid { gap:12px; } .photo-story { height:260px; border-radius:18px; } .photo-story figcaption { left:9px; right:9px; bottom:9px; padding:10px 12px; font-size:11px; } }
+    @media(max-width:620px) { .photo-stories-grid { grid-template-columns:1fr 1fr; } .photo-story:first-child { grid-column:span 2; height:310px; } .photo-story:not(:first-child) { height:255px; } .photo-story:nth-child(2) img { object-position:center 23%; } }
+    @media(max-width:380px) { .photo-story:not(:first-child) { height:215px; } .photo-story figcaption { font-size:10px; } }
+</style>
 </head>
 <body>
   <div class="topbar"><div class="container"><div>Gyermekfejlesztés Győrben <span class="sep">·</span> 9025 Győr, Dankó Pista tér 3–5.</div><a href="tel:+36308540835">Hívj bennünket: +36 30 854 0835 ↗</a></div></div>
@@ -262,7 +277,8 @@
       </button>
       <nav class="menu" id="navMenu" aria-label="Fő navigáció">
         <a href="#fejlesztesek">Fejlesztéseink</a>
-        <a href="#hogyan">Hogyan segítünk?</a>
+        <a href="arak.html">Árak</a>
+        <a href="blog.html">Blog</a>
         <a href="#rolunk">Rólunk</a>
         <a href="#kerdesek">GYIK</a>
         <a href="#kapcsolat" class="btn">Kapcsolatfelvétel <span class="arrow" aria-hidden="true">↗</span></a>
@@ -283,7 +299,7 @@
           </div>
           <div class="hero-art" aria-label="Illusztráció és a későbbi Manka fotó helye">
             <div class="hero-visual" id="heroVisual">
-              <img class="hero-photo" id="heroPhoto" alt="Játékos fejlesztés a Manka Fejlesztő Kuckóban" />
+              <img class="hero-photo" id="heroPhoto" alt="Két gyermek fejlesztő kirakós feladatot old meg a Manka Kuckóban" />
               <div class="placeholder-art" aria-hidden="true">
                 <svg viewBox="0 0 550 510" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
                   <rect width="550" height="510" fill="#e4ebdf"/><path d="M0 395Q145 340 275 384T550 376V510H0Z" fill="#d1dfcf"/>
@@ -342,13 +358,38 @@
 
     <section class="section steps" id="hogyan"><div class="container"><div class="section-head"><div><p class="kicker">Így indul a közös munka</p><h2>Lépésről lépésre,<br>együtt.</h2></div><p>Az első érdeklődéstől a személyre szabott foglalkozásig átlátható, támogató folyamatra törekszünk.</p></div><div class="step-grid"><div class="step"><div class="step-no">01</div><h3>Kapcsolatba lépünk</h3><p>Telefonon vagy e-mailben egyeztetjük, miben kérsz segítséget, és melyik szakemberhez érdemes fordulnotok.</p></div><div class="step"><div class="step-no">02</div><h3>Megismerjük a gyermeket</h3><p>Komplex felmérés során megismerjük az aktuális képességeket, erősségeket és a fejlesztést igénylő területeket.</p></div><div class="step"><div class="step-no">03</div><h3>Elindul a fejlődés</h3><p>A javasolt foglalkozásokon játékos formában, a gyermek egyéni tempójához igazodva dolgozunk.</p></div></div></div></section>
 
-    <section class="section about" id="rolunk"><div class="container about-grid"><div class="about-photo" id="aboutVisual"><img id="aboutPhoto" alt="A Manka Fejlesztő Kuckó fejlesztőtere és szakemberei" /><svg viewBox="0 0 540 490" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="540" height="490" fill="#dce7d8"/><circle cx="410" cy="106" r="76" fill="#f6e6bd"/><path d="M0 408Q160 345 285 397T540 365V490H0Z" fill="#c8dbc8"/><rect x="48" y="164" width="230" height="200" rx="18" fill="#f1ead8"/><rect x="75" y="196" width="78" height="77" rx="10" fill="#a7c2a4"/><rect x="170" y="196" width="78" height="77" rx="10" fill="#ebccaf"/><rect x="75" y="290" width="173" height="16" rx="7" fill="#d3bd9f"/><rect x="75" y="326" width="173" height="16" rx="7" fill="#d3bd9f"/><path d="M323 385Q296 284 356 264Q422 250 442 384" fill="#df9d88"/><circle cx="382" cy="238" r="57" fill="#f5ceb0"/><path d="M326 240Q319 159 387 174Q444 171 439 230Q404 222 389 190Q368 226 326 240" fill="#76695d"/><circle cx="365" cy="244" r="3" fill="#665c51"/><circle cx="400" cy="244" r="3" fill="#665c51"/><path d="M369 265Q381 273 393 261" stroke="#a47766" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="240" y="379" width="223" height="20" rx="10" fill="#acbfa8"/></svg><div class="photo-label">2. fotóhely<br><span style="font-weight:500">Fejlesztőtér vagy a szakmai csapat</span></div></div><div><p class="kicker">Ismerj meg bennünket</p><h2>Egy kuckó, ahol jó fejlődni.</h2><p>A Manka Fejlesztő Kuckóban fontosnak tartjuk, hogy a gyermekek biztonságban, elfogadó légkörben és örömteli feladatokon keresztül fejlődhessenek.</p><p>Az egyéni szükségletekhez illeszkedő foglalkozásokat szakemberek vezetik, és a szülőkkel való együttműködést is a közös munka részének tekintjük.</p><div class="about-statement">„A nagy változások gyakran egészen apró lépésekkel kezdődnek.”</div><a class="btn btn-outline" href="https://www.manka-fejleszto-kucko.hu/rolunk/" target="_blank" rel="noopener">Jelenlegi szakmai bemutatkozás <span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="section about" id="rolunk"><div class="container about-grid"><div class="about-photo" id="aboutVisual"><img id="aboutPhoto" alt="Kisgyermek és fejlesztő szakember korai mozgásfejlesztő foglalkozáson" /><svg viewBox="0 0 540 490" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="540" height="490" fill="#dce7d8"/><circle cx="410" cy="106" r="76" fill="#f6e6bd"/><path d="M0 408Q160 345 285 397T540 365V490H0Z" fill="#c8dbc8"/><rect x="48" y="164" width="230" height="200" rx="18" fill="#f1ead8"/><rect x="75" y="196" width="78" height="77" rx="10" fill="#a7c2a4"/><rect x="170" y="196" width="78" height="77" rx="10" fill="#ebccaf"/><rect x="75" y="290" width="173" height="16" rx="7" fill="#d3bd9f"/><rect x="75" y="326" width="173" height="16" rx="7" fill="#d3bd9f"/><path d="M323 385Q296 284 356 264Q422 250 442 384" fill="#df9d88"/><circle cx="382" cy="238" r="57" fill="#f5ceb0"/><path d="M326 240Q319 159 387 174Q444 171 439 230Q404 222 389 190Q368 226 326 240" fill="#76695d"/><circle cx="365" cy="244" r="3" fill="#665c51"/><circle cx="400" cy="244" r="3" fill="#665c51"/><path d="M369 265Q381 273 393 261" stroke="#a47766" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="240" y="379" width="223" height="20" rx="10" fill="#acbfa8"/></svg><div class="photo-label">2. fotóhely<br><span style="font-weight:500">Fejlesztőtér vagy a szakmai csapat</span></div></div><div><p class="kicker">Ismerj meg bennünket</p><h2>Egy kuckó, ahol jó fejlődni.</h2><p>A Manka Fejlesztő Kuckóban fontosnak tartjuk, hogy a gyermekek biztonságban, elfogadó légkörben és örömteli feladatokon keresztül fejlődhessenek.</p><p>Az egyéni szükségletekhez illeszkedő foglalkozásokat szakemberek vezetik, és a szülőkkel való együttműködést is a közös munka részének tekintjük.</p><div class="about-statement">„A nagy változások gyakran egészen apró lépésekkel kezdődnek.”</div><a class="btn btn-outline" href="https://www.manka-fejleszto-kucko.hu/rolunk/" target="_blank" rel="noopener">Jelenlegi szakmai bemutatkozás <span aria-hidden="true">↗</span></a></div></div></section>
+
+
+    <section class="section photo-stories" id="pillanatok" aria-labelledby="pillanatok-title">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">Pillanatok a Kuckóból</p><h2 id="pillanatok-title">A játék a fejlődés<br>természetes útja.</h2></div>
+          <p>Fedezd fel, hogyan kapcsolódik össze a mozgás, a figyelem és az örömteli játék a foglalkozásainkon.</p>
+        </div>
+        <div class="photo-stories-grid">
+          <figure class="photo-story">
+            <img src="./assets/images/manka-mozgasfejlesztes.jpg" alt="Gyermek egyensúlyozó és mozgásos akadálypályán a fejlesztőteremben" loading="lazy" decoding="async">
+            <figcaption>Játékos mozgásfejlesztés</figcaption>
+          </figure>
+          <figure class="photo-story">
+            <img src="./assets/images/manka-jatekos-fejlesztes.jpg" alt="Gyermek színes játékos feladattal foglalkozik a szőnyegen" loading="lazy" decoding="async">
+            <figcaption>Felfedezés és problémamegoldás</figcaption>
+          </figure>
+          <figure class="photo-story">
+            <img src="./assets/images/manka-koncentracio.jpg" alt="Gyermek képes feladatlappal és színes ceruzákkal dolgozik asztalnál" loading="lazy" decoding="async">
+            <figcaption>Figyelem és finommotorika</figcaption>
+          </figure>
+        </div>
+        <div class="photo-stories-action"><a href="blog.html">Szakmai írásaink és további érdekességek <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
 
     <section class="section faq" id="kerdesek"><div class="container faq-grid"><div><p class="kicker">Gyakran ismételt kérdések</p><h2>Amire a szülők<br>gyakran kíváncsiak.</h2><p class="faq-intro">Minden gyermek és helyzet egyedi. Ha nem találsz választ a kérdésedre, keress bennünket közvetlenül.</p></div><div class="accordion"><details><summary>Milyen életkorú gyermekek jelentkezhetnek?</summary><p>Korai komplex fejlesztésre 2 hónapos kortól 3 éves korig lehet érdeklődni; emellett óvodás és iskolás korú gyermekek számára is vannak foglalkozási lehetőségek.</p></details><details><summary>Szükséges felmérés a fejlesztés megkezdéséhez?</summary><p>A Manka jelenlegi szolgáltatásleírása szerint a fejlesztések megkezdését komplex felmérés előzi meg. Az érdeklődéskor egyeztetjük a pontos lépéseket.</p></details><details><summary>Hogyan kérhetek időpontot?</summary><p>Telefonon vagy e-mailben tudsz érdeklődni. Az időpontot és az aktuálisan elérhető foglalkozásokat közvetlenül egyeztetjük.</p></details><details><summary>Elérhető jelenleg a konduktív fejlesztés?</summary><p>A korábbi honlapon a konduktív fejlesztés szüneteléséről volt tájékoztatás. Az aktuális elérhetőségről kérjük, érdeklődj telefonon vagy e-mailben.</p></details></div></div></section>
 
     <section class="section contact" id="kapcsolat"><div class="container contact-grid"><div><p class="kicker">Itt kezdődik az első kis lépés</p><h2>Beszélgessünk<br>a gyermekedről.</h2><p class="contact-intro">Kérdésed van, vagy szeretnél érdeklődni a fejlesztési lehetőségekről? Keress bennünket bizalommal, és egyeztetjük a következő lépést.</p><div class="contact-detail"><span class="d-icon" aria-hidden="true">⌁</span><div><small>Telefon</small><a href="tel:+36308540835">+36 30 854 0835</a></div></div><div class="contact-detail"><span class="d-icon" aria-hidden="true">✉</span><div><small>E-mail</small><a href="mailto:mankafejlesztokucko@gmail.com">mankafejlesztokucko@gmail.com</a></div></div><div class="contact-detail"><span class="d-icon" aria-hidden="true">⌖</span><div><small>Helyszín</small><a href="https://www.google.com/maps/search/?api=1&query=9025+Gy%C5%91r+Dank%C3%B3+Pista+t%C3%A9r+3-5" target="_blank" rel="noopener">9025 Győr, Dankó Pista tér 3–5. ↗</a></div></div></div><div class="form-card"><h3>Írj nekünk!</h3><p class="hint">Töltsd ki az adatokat, és megnyitjuk az e-mail alkalmazásodat az előkészített üzenettel.</p><form id="enquiryForm"><div class="field-grid"><label class="field">Neved<input type="text" name="name" placeholder="Hogyan szólíthatunk?" autocomplete="name" required /></label><label class="field">E-mail címed<input type="email" name="email" placeholder="nev@pelda.hu" autocomplete="email" required /></label></div><label class="field">Miben érdeklődsz?<select name="service" required><option value="">Válassz egy területet</option><option>Komplex felmérés</option><option>Korai komplex fejlesztés</option><option>Óvodáskori fejlesztés</option><option>KMT mozgásfejlesztés</option><option>Iskola-előkészítés</option><option>Korrepetálás, felzárkóztatás</option><option>Nem tudom még / általános kérdés</option></select></label><label class="field">Üzenet (nem kötelező)<textarea name="message" placeholder="Röviden írd le, miben kérsz segítséget. Kérjük, itt ne ossz meg egészségügyi adatokat."></textarea></label><button type="submit" class="btn">E-mail előkészítése <span class="arrow" aria-hidden="true">↗</span></button><p class="form-note">Bemutatóverzió: a weboldal nem tárol és nem küld el adatokat szerverre. A gomb az alapértelmezett e-mail alkalmazásban nyitja meg a megkeresést.</p></form></div></div></section>
   </main>
-  <footer><div class="container footer-row"><div><strong>Manka Fejlesztő Kuckó</strong><br>9025 Győr, Dankó Pista tér 3–5.</div><div class="footer-links"><a href="#fejlesztesek">Fejlesztéseink</a><a href="#rolunk">Rólunk</a><a href="#kapcsolat">Kapcsolat</a><a href="https://www.manka-fejleszto-kucko.hu/" target="_blank" rel="noopener">Jelenlegi weboldal</a></div><div>© <span id="year"></span> Manka Fejlesztő Kuckó</div></div></footer>
+  <footer><div class="container footer-row"><div><strong>Manka Fejlesztő Kuckó</strong><br>9025 Győr, Dankó Pista tér 3–5.</div><div class="footer-links"><a href="#fejlesztesek">Fejlesztéseink</a><a href="#rolunk">Rólunk</a><a href="arak.html">Árak</a><a href="blog.html">Blog</a><a href="#kapcsolat">Kapcsolat</a><a href="https://www.manka-fejleszto-kucko.hu/" target="_blank" rel="noopener">Jelenlegi weboldal</a></div><div>© <span id="year"></span> Manka Fejlesztő Kuckó</div></div></footer>
   <div class="prototype-banner">FŐOLDAL-KONCEPCIÓ · NEM ÉLES WEBOLDAL</div>
   <a class="mobile-cta" href="tel:+36308540835" aria-label="Telefonhívás indítása">☎ &nbsp; Hívás indítása</a>
   <script>
@@ -366,8 +407,8 @@
       });
       // A helyi fotók megjelennek, amint a megadott fájlok feltöltésre kerülnek.
       function applyPhoto(imgId,visualId,url){if(!url)return; var img=document.getElementById(imgId); img.onload=function(){document.getElementById(visualId).classList.add('has-image')};img.src=url;}
-      applyPhoto('heroPhoto','heroVisual','./assets/images/manka-fooldal.webp');
-      applyPhoto('aboutPhoto','aboutVisual','./assets/images/manka-csapat.webp');
+      applyPhoto('heroPhoto','heroVisual','./assets/images/manka-gyerekek-fejlesztes.jpg');
+      applyPhoto('aboutPhoto','aboutVisual','./assets/images/manka-korai-fejlesztes.jpg');
       window.mankaPreview={applyPhoto:applyPhoto};
     })();
   </script>
