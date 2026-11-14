@@ -30,7 +30,7 @@ jobs:
       - name: Oldal csomagolasa
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./site
+          path: ./
       - name: Publikalas
         id: deployment
         uses: actions/deploy-pages@v4
